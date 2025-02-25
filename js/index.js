@@ -41,6 +41,47 @@ function removeItems(arr, startIndex, deleteCount) {
 
 // removeItems(["apple", "banana", "cherry"], 1, 1);
 
-const fruits = ["яблоко", "груша", "слива", "драконы"];
-fruits.splice(1, 1, "банан", "арбуз", "дом");
-console.log(fruits); // ["яблоко", "банан", "слива"]
+// 3. Объединение массивов без дубликатов
+// Описание:
+// Напишите функцию mergeUnique(arr1, arr2), которая принимает два массива и
+// возвращает новый массив, содержащий все уникальные элементы из обоих массивов.
+// Пример:
+// javascript
+// CopyEdit
+// mergeUnique([1, 2, 3], [3, 4, 5]); // [1, 2, 3, 4, 5]
+// mergeUnique(['a', 'b'], ['b', 'c', 'd']); // ['a', 'b', 'c', 'd']
+// mergeUnique([], [1, 2]); // [1, 2]
+
+function mergeUnique(arr1, arr2) {
+  let newArr = [...arr1];
+  for (let i = 0; i < arr2.length; i++) {
+    if (!newArr.includes(arr2[i])) {
+      newArr.push(arr2[i]);
+    }
+  }
+  console.log(newArr);
+}
+// mergeUnique(["a", "b"], ["b", "c", "d"]);
+// mergeUnique([1, 2, 3], [3, 4, 5]);
+
+// 4. Перестановка элементов массива
+// Описание:
+// Напишите функцию swapElements(arr, index1, index2), которая принимает
+// массив arr и два индекса index1 и index2. Функция должна поменять местами
+// элементы по этим индексам. Верните новый массив.
+// Пример:
+// javascript
+// CopyEdit
+// swapElements([1, 2, 3, 4], 1, 3); // [1, 4, 3, 2]
+// swapElements(['a', 'b', 'c'], 0, 2); // ['c', 'b', 'a']
+// swapElements([10, 20, 30], 1, 1); // [10, 20, 30]
+
+function swapElements(arr, index1, index2) {
+  let copyArr = [...arr];
+  copyArr[index1] = arr[index2];
+  copyArr[index2] = arr[index1];
+
+  console.log(copyArr);
+}
+swapElements(["a", "b", "c"], 0, 2); // ['c', 'b', 'a']
+// swapElements([1, 2, 3, 4], 1, 2);
