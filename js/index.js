@@ -52,15 +52,15 @@ function removeItems(arr, startIndex, deleteCount) {
 // mergeUnique(['a', 'b'], ['b', 'c', 'd']); // ['a', 'b', 'c', 'd']
 // mergeUnique([], [1, 2]); // [1, 2]
 
-function mergeUnique(arr1, arr2) {
-  let newArr = [...arr1];
-  for (let i = 0; i < arr2.length; i++) {
-    if (!newArr.includes(arr2[i])) {
-      newArr.push(arr2[i]);
-    }
-  }
-  console.log(newArr);
-}
+// function mergeUnique(arr1, arr2) {
+//   let newArr = [...arr1];
+//   for (let i = 0; i < arr2.length; i++) {
+//     if (!newArr.includes(arr2[i])) {
+//       newArr.push(arr2[i]);
+//     }
+//   }
+//   console.log(newArr);
+// }
 // mergeUnique(["a", "b"], ["b", "c", "d"]);
 // mergeUnique([1, 2, 3], [3, 4, 5]);
 
@@ -76,12 +76,69 @@ function mergeUnique(arr1, arr2) {
 // swapElements(['a', 'b', 'c'], 0, 2); // ['c', 'b', 'a']
 // swapElements([10, 20, 30], 1, 1); // [10, 20, 30]
 
-function swapElements(arr, index1, index2) {
-  let copyArr = [...arr];
-  copyArr[index1] = arr[index2];
-  copyArr[index2] = arr[index1];
+// function swapElements(arr, index1, index2) {
+//   let copyArr = [...arr];
+//   copyArr[index1] = arr[index2];
+//   copyArr[index2] = arr[index1];
 
-  console.log(copyArr);
-}
-swapElements(["a", "b", "c"], 0, 2); // ['c', 'b', 'a']
+//   console.log(copyArr);
+// }
+// swapElements(["a", "b", "c"], 0, 2); // ['c', 'b', 'a']
 // swapElements([1, 2, 3, 4], 1, 2);
+
+// 5. Разделение массива на подмассивы
+// Описание:
+// Напишите функцию splitArray(arr, size), которая принимает массив arr и
+// число size. Функция должна разделить массив на подмассивы длиной size.
+// Последний подмассив может быть меньше, если элементов не хватает.
+
+// function splitArray(arr, size) {
+//   let newArr = [];
+
+//   for (let i = 0; i < arr.length; i += size) {
+//     newArr.push(arr.slice(i, i + size));
+//   }
+//   return newArr;
+// }
+
+// console.log(splitArray([1, 2, 3, 4, 5, 6, 7, 8, 9], 2));
+
+// 6. Очередь с использованием push и shift
+// Описание:
+// Напишите функцию queueOperations(arr, element), которая реализует очередь с
+// помощью методов push и shift. Функция должна добавлять элемент в конец массива
+// с помощью push, а затем удалять первый элемент с помощью shift. Верните
+// изменённый массив.
+
+// function queueOperations(arr, element) {
+//   arr.push(element);
+//   arr.shift();
+//   return arr;
+// }
+
+// console.log(queueOperations([1, 2, 3, 4, 5, 6, 7, 8, 9], 2));
+
+// 7. Реверс массива с использованием push и pop
+// Описание:
+// Напишите функцию reverseArray(arr), которая переворачивает массив с
+// использованием методов push и pop. Функция должна последовательно извлекать
+// элементы из исходного массива с помощью pop и добавлять их в новый массив с
+// помощью push.
+// Пример:
+// javascript
+// CopyEdit
+// reverseArray([1, 2, 3, 4]); // [4, 3, 2, 1]
+// reverseArray(['a', 'b', 'c']); // ['c', 'b', 'a']
+// reverseArray([10, 20, 30, 40]); // [40, 30, 20, 10]\
+
+// function reverseArray(arr) {
+//   let newArr = [];
+//   let len = arr.length;
+//   for (let i = 0; i < len; i++) {
+//     let element = arr.pop();
+//     newArr.push(element);
+//   }
+//   return newArr;
+// }
+
+// console.log(reverseArray([1, 2, 3, 4]));
